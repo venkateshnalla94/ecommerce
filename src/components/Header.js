@@ -2,7 +2,10 @@
 import React from "react";
 import "../styles/Header.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useCart } from "../context/CartContext";
 const Header = () => {
+  const { cart } = useCart();
+
   return (
     <header>
       <div className="left-section">
@@ -17,6 +20,9 @@ const Header = () => {
         <ul>
           <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/cart">Cart ({cart.length})</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
