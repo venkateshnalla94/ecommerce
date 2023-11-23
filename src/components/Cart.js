@@ -17,6 +17,7 @@ const Cart = () => {
     <div>
       <Header />
       <div className="cart-sections">
+        {/* Cart Items Section */}
         <div className="cart-container">
           <h2>Shopping Cart</h2>
           {cart.length === 0 ? (
@@ -43,8 +44,11 @@ const Cart = () => {
             </div>
           )}
         </div>
-        {/* Fast Checkout Form Component */}
-        <FastCheckoutForm />
+
+        {/* Fast Checkout Form Section */}
+        <div className="fast-checkout-form-section">
+          <FastCheckoutForm />
+        </div>
       </div>
 
       <Footer />

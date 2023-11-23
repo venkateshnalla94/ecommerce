@@ -1,10 +1,18 @@
 // src/components/FastCheckoutForm.js
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
+import axios from "axios";
 import * as Yup from "yup";
 import "../styles/FastCheckoutForm.css";
 
 const FastCheckoutForm = () => {
+  const [paymentMethod, setPaymentMethod] = useState("");
+  const [testCardDetails, setTestCardDetails] = useState({
+    number: "4111111111111111",
+    expiryMonth: "12",
+    expiryYear: "2023",
+    cvc: "737",
+  });
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -12,6 +20,9 @@ const FastCheckoutForm = () => {
       email: "",
       address: "",
       phone: "",
+      creditCardNumber: "",
+      expirationDate: "",
+      cvv: "",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Required"),
@@ -19,12 +30,27 @@ const FastCheckoutForm = () => {
       email: Yup.string().email("Invalid email address").required("Required"),
       address: Yup.string().required("Required"),
       phone: Yup.string().required("Required"),
+      creditCardNumber: Yup.string().required("Required"),
+      expirationDate: Yup.string().required("Required"),
+      cvv: Yup.string().required("Required"),
     }),
     onSubmit: (values) => {
       // Handle form submission logic (e.g., send data to server)
       console.log("Form submitted with values:", values);
     },
   });
+
+  const handleTestPayment = async () => {
+    try {
+      // Call your server endpoint or directly handle the test payment on the frontend
+      console.log("Simulating test payment:", testCardDetails);
+
+      // In a real-world scenario, you would send the payment details to your server
+      // for additional security and handling through Adyen API.
+    } catch (error) {
+      console.error("Error handling test payment:", error);
+    }
+  };
 
   return (
     <div className="fast-checkout-form-container">
@@ -104,8 +130,56 @@ const FastCheckoutForm = () => {
             <div className="error">{formik.errors.phone}</div>
           )}
         </div>
+        {/* Credit Card Details */}
+        <div className="form-group">
+          <label htmlFor="creditCardNumber">Credit Card Number:</label>
+          <input
+            type="text"
+            id="creditCardNumber"
+            name="creditCardNumber"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.creditCardNumber}
+          />
+          {formik.touched.creditCardNumber &&
+            formik.errors.creditCardNumber && (
+              <div className="error">{formik.errors.creditCardNumber}</div>
+            )}
+        </div>
 
-        <button type="submit">Submit</button>
+        <div className="form-group">
+          <label htmlFor="expirationDate">Expiration Date:</label>
+          <input
+            type="text"
+            id="expirationDate"
+            name="expirationDate"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.expirationDate}
+          />
+          {formik.touched.expirationDate && formik.errors.expirationDate && (
+            <div className="error">{formik.errors.expirationDate}</div>
+          )}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="cvv">CVV:</label>
+          <input
+            type="text"
+            id="cvv"
+            name="cvv"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.cvv}
+          />
+          {formik.touched.cvv && formik.errors.cvv && (
+            <div className="error">{formik.errors.cvv}</div>
+          )}
+        </div>
+
+        <button type="button" onClick={handleTestPayment}>
+          Pay Now (Test)
+        </button>
       </form>
     </div>
   );

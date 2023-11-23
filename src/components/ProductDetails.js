@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import "../styles/ProductDetailPage.css";
 import Footer from "./Footer";
+import Banner from "./Banner";
 import { useCart } from "../context/CartContext";
 import SuggestedProductsBanner from "./SuggestProducts";
+import VideoPlayer from "./VideoPlayer";
 
 const ProductDetailPage = ({ match }) => {
   const { addToCart } = useCart();
@@ -95,6 +97,13 @@ const ProductDetailPage = ({ match }) => {
           {/* <Link to="/">Back to Home</Link> */}
         </div>
       </div>
+      <Banner
+        imageUrl={
+          "https://i.ebayimg.com/images/g/fFcAAOSwNxte3Cf9/s-l1200.webp"
+        }
+        altText="Banner 1"
+      ></Banner>
+      <VideoPlayer></VideoPlayer>
       <Footer></Footer>
     </div>
   );

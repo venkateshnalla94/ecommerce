@@ -8,7 +8,7 @@ import HoverImage from "./HoverImage";
 
 const Home = () => {
   const bannerImage =
-    "https://as2.ftcdn.net/v2/jpg/04/82/34/25/1000_F_482342545_Aj4utqpaKf51KxqIQ5uCjen5Swbd0ebk.jpg";
+    "https://cdn.dribbble.com/users/3237629/screenshots/12922293/artboard_1_4x.jpg";
 
   const hoverImages = [
     {

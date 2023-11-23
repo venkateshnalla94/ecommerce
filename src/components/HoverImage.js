@@ -5,11 +5,14 @@ import "../styles/HoverImage.css"; // Create this CSS file for styling
 
 const HoverImage = ({ src, alt, productId }) => {
   const [isHovered, setIsHovered] = useState(false);
-
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <Link
       to={`/product/${productId}`}
       className={`hover-image-container ${isHovered ? "hovered" : ""}`}
+      onClick={scrollToTop}
     >
       <img
         src={src}

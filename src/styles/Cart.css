@@ -1,11 +1,21 @@
 /* src/components/Cart.css */
-.cart-container {
+.cart-sections {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .cart-container,
+  .fast-checkout-form-section {
     max-width: 800px;
-    /* margin: 20px auto; */
     padding: 20px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     margin: 0px 40px 0px 40px;
+    margin-bottom: 20px; /* Add margin between the sections */
+  }
+  
+  .fast-checkout-form-section {
+    flex-grow: 1; /* Allow the form section to take up the remaining space */
   }
   
   h2 {
@@ -17,9 +27,17 @@
     display: flex;
     margin-bottom: 20px;
     border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow to create a shadow effect */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;  /* Add transition for a smooth effect */
+  
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adjust the box shadow on hover */
+      transform: scale(1.05);
+    }
   }
   
+
   .cart-item img {
     width: 100px;
     height: 100px;
@@ -39,21 +57,19 @@
   .item-details p {
     color: #777;
   }
+  
   .remove-from-cart {
-    background-color: #000000; /* Set the background color of the button */
-    color: #fff; /* Set the text color of the button */
-    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px; /* Add margin between the specifications and the button */
+    margin-top: 20px;
   }
+  
   .remove-from-cart:hover {
-    background-color: #9f9f9f; /* Adjust the background color on hover */
-  }
-  .cart-sections{
-    display: flex;
-    justify-content: space-between;
+    background-color: #9f9f9f;
   }
   
