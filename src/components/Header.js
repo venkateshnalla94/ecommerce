@@ -9,12 +9,20 @@ const Header = () => {
   return (
     <header>
       <div className="left-section">
-        <img
-          src="https://s3-symbol-logo.tradingview.com/amazon--600.png"
-          alt="Company Logo"
-          className="logo"
-        />
-        <p>Your Name</p>
+        <Link to="/">
+          <img
+            src="https://s3-symbol-logo.tradingview.com/amazon--600.png"
+            alt="Company Logo"
+            className="logo"
+          />
+        </Link>
+        <nav className="right-section">
+          <ul>
+            <li>
+              <Link to="/">My Store</Link>
+            </li>
+          </ul>
+        </nav>
       </div>
       <nav className="right-section">
         <ul>
@@ -24,9 +32,7 @@ const Header = () => {
           <li>
             <Link to="/cart">Cart ({cart.length})</Link>
           </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
+
           {/* Add more navigation links as needed */}
         </ul>
       </nav>

@@ -12,6 +12,7 @@ const ProductDetailPage = ({ match }) => {
   const productId = match.params.id; // Access the product ID from the URL params
   const products = {
     1: {
+      id: 1,
       name: "Nike Air Force 1 '07",
       description:
         "The radiance lives on with the b-ball original. Crossing hardwood comfort with off-court flair, it puts a fresh spin on what you know best: '80s-inspired construction, bold details and nothin'-but-net style.",
@@ -25,6 +26,7 @@ const ProductDetailPage = ({ match }) => {
       ],
     },
     2: {
+      id: 2,
       name: "Nike Go FlyEase",
       description:
         "Ditch the laces and get outside. These kicks feature Nike's revolutionary FlyEase technology, making on-and-off a breeze. With a heel that pivots open for a totally hands-free entry, they're great for people with limited mobility—or anyone who wants a quicker way to get going.",
@@ -34,6 +36,20 @@ const ProductDetailPage = ({ match }) => {
       specifications: [
         "Colour Shown: Black/White",
         "Style: DR5540-002",
+        "Specification 3",
+      ],
+    },
+    3: {
+      id: 3,
+      name: "Nike Air Max Plus III",
+      description:
+        "The Nike Air Max Plus III combines ultra-comfortable Tuned Air Technology with an energetic silhouette made famous by its predecessors. The III updates the look with TPU details fused to the upper while paying homage to the iconic colour fade.",
+      price: "$75.00",
+      imageUrl:
+        "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/disuwww5uxkqulu2aivh/air-max-plus-iii-shoes-WV2bDM.png",
+      specifications: [
+        "Colour Shown: Black/Black/Wolf Grey",
+        "Style: CJ9684-002",
         "Specification 3",
       ],
     },
@@ -47,7 +63,7 @@ const ProductDetailPage = ({ match }) => {
   const handleAddToCart = () => {
     // Implement logic to add the product to the cart (e.g., use a state or dispatch an action)
     addToCart(product);
-    console.log(`Added ${product.name} to the cart`);
+    console.log(`Added ${JSON.stringify(product)} to the cart`);
   };
 
   // Fetch and display details for the specific product using the productId
@@ -75,6 +91,7 @@ const ProductDetailPage = ({ match }) => {
             Add to Cart
           </button>
           <SuggestedProductsBanner></SuggestedProductsBanner>
+
           {/* <Link to="/">Back to Home</Link> */}
         </div>
       </div>
