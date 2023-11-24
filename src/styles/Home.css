@@ -1,29 +1,23 @@
-main {
-    flex: 1;
-  }
+/* src/styles/Home.css */
 
-  body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+.main {
+    background-color: #caafa8;
+    min-height: 100vh; /* Set a minimum height to cover the entire viewport */
   }
-  .footer {
-    background-color: #6d6e6f;
+  
+  .banner-link {
+    /* If you want to style the link within the banner */
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* .hover-images-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
     padding: 20px;
-    text-align: center;
-    position: sticky;
-    bottom: 0;
-  }
+  } */
   
-  .payment-methods {
-    margin-top: 10px;
-    display: flex;
-    justify-content: flex-end;
-  }
+  /* Add other styles as needed for your layout */
   
-  .payment-logo {
-    width: 50px;
-    margin-right: 30px;
-  }

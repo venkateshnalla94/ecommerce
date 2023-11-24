@@ -27,6 +27,6 @@
   .hover-image-container:hover {
     transform: translateY(-5%);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adjust box shadow for hover */
-    transform: scale(1.1) rotate(360deg); /* Scale and rotate on hover */
+    transform: scale(1.1) ease; /* Scale and rotate on hover */
   }
   
