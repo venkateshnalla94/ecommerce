@@ -2,13 +2,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
-import "../styles/ProductDetailPage.css";
 import Footer from "./Footer";
 import Banner from "./Banner";
 import { useCart } from "../context/CartContext";
 import SuggestedProductsBanner from "./SuggestProducts";
 import VideoPlayer from "./VideoPlayer";
-
+import "../styles/ProductDetailPage.css";
 const ProductDetailPage = ({ match }) => {
   const { addToCart } = useCart();
   const productId = match.params.id; // Access the product ID from the URL params

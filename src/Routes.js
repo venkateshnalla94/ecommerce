@@ -6,6 +6,7 @@ import ProductDetailPage from "./components/ProductDetails";
 import { CartProvider } from "./context/CartContext";
 import Cart from "./components/Cart";
 import ProductListing from "./components/ProductList";
+import ThankYouPage from "./components/ThankYouPage";
 const AppRoutes = () => {
   return (
     <Router>
@@ -15,6 +16,7 @@ const AppRoutes = () => {
           <Route path="/product/:id" component={ProductDetailPage} />
           <Route path="/cart" component={Cart} />
           <Route path="/list" component={ProductListing} />
+          <Route path="/thankyou" component={ThankYouPage} />
         </Switch>
       </CartProvider>
     </Router>
